@@ -1,5 +1,3 @@
-
-
 class Solution {
     public String is_common(String[] s, String[] t) {
         // Code here
