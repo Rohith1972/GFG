@@ -3,13 +3,16 @@
 class Solution {
     public String removeConsecutiveCharacter(String s) {
         // code here
-        char[] arr = s.toCharArray();
-        StringBuilder obj = new StringBuilder();
-        obj.append(arr[0]);
-        for(int i=1;i<arr.length;i++){
-            if(arr[i]!=arr[i-1])
-                obj.append(arr[i]);
+        Stack<Character> st = new Stack<>();
+        st.push(s.charAt(0));
+        for(int i=0;i<s.length();i++){
+            if(st.peek()!=s.charAt(i))
+                st.push(s.charAt(i));
         }
-        return obj.toString();
+        StringBuilder res = new StringBuilder();
+        while(!st.empty()){
+            res.append(st.pop());
+        }
+        return res.reverse().toString();
     }
 }
