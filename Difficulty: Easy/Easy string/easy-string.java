@@ -3,9 +3,9 @@ class Solution {
     String transform(String S) {
         // code here
         String s = S.toLowerCase();
+        StringBuilder res = new StringBuilder();
         char ch = s.charAt(0);
         int count=1;
-        StringBuilder res = new StringBuilder();
         for(int i=1;i<s.length();i++){
             if(s.charAt(i)==ch)
                 count++;
